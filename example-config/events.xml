@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<esper-configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xmlns="http://www.espertech.com/schema/esper"
+                     xsi:schemaLocation="
+http://www.espertech.com/schema/esper
+http://www.espertech.com/schema/esper/esper-configuration-2.0.xsd">
+     <event-type name="netflowEvent">
+        <java-util-map>
+            <map-property name="bytes" class="int"/>
+            <map-property name="srcip" class="string"/>
+            <map-property name="first" class="java.util.Date"/>
+            <map-property name="last" class="java.util.Date"/>
+            <map-property name="dstip" class="string"/>
+            <map-property name="af" class="int"/>
+            <map-property name="tos" class="int"/>
+            <map-property name="prot" class="string"/>
+            <map-property name="srcport" class="int"/>
+            <map-property name="dstport" class="int"/>
+            <map-property name="packets" class="int"/>
+            <map-property name="dstas" class="int"/>
+            <map-property name="srcas" class="int"/>
+            <map-property name="flags" class="int"/>
+            <map-property name="input" class="int"/>
+            <map-property name="output" class="int"/>
+
+        </java-util-map>
+   </event-type>
+    <event-type name="instance">
+        <java-util-map>
+            <map-property name="user_id" class="string"/>
+            <map-property name="message_signature" class="string"/>
+            <map-property name="timestamp" class="java.util.Date"/>
+            <map-property name="resource_id" class="string"/>
+            <map-property name="message_id" class="string"/>
+            <map-property name="source" class="string"/>
+            <map-property name="counter_unit" class="string"/>
+            <map-property name="counter_volume" class="int"/>
+            <map-property name="project_id" class="string"/>
+            <map-property name="resource_metadata" class="java.lang.Object"/>
+            <map-property name="counter_type" class="string"/>
+        </java-util-map>
+   </event-type>
+   <event-type name="memory">
+        <java-util-map>
+            <map-property name="user_id" class="string"/>
+            <map-property name="message_signature" class="string"/>
+            <map-property name="timestamp" class="java.util.Date"/>
+            <map-property name="resource_id" class="string"/>
+            <map-property name="message_id" class="string"/>
+            <map-property name="source" class="string"/>
+            <map-property name="counter_unit" class="string"/>
+            <map-property name="counter_volume" class="int"/>
+            <map-property name="project_id" class="string"/>
+            <map-property name="resource_metadata" class="java.lang.Object"/>
+            <map-property name="counter_type" class="string"/>
+        </java-util-map>
+   </event-type>
+    <event-type name="image">
+        <java-util-map>
+            <map-property name="user_id" class="string"/>
+            <map-property name="message_signature" class="string"/>
+            <map-property name="timestamp" class="java.util.Date"/>
+            <map-property name="resource_id" class="string"/>
+            <map-property name="message_id" class="string"/>
+            <map-property name="source" class="string"/>
+            <map-property name="counter_unit" class="string"/>
+            <map-property name="counter_volume" class="int"/>
+            <map-property name="project_id" class="string"/>
+            <map-property name="resource_metadata" class="java.lang.Object"/>
+            <map-property name="counter_type" class="string"/>
+        </java-util-map>
+   </event-type>
+   <plugin-singlerow-function name="getCountry"
+        function-class="samzaesper.udf.GeoIPLookup" function-method="getCountry" />
+</esper-configuration>
