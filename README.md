@@ -46,6 +46,7 @@ how to configure samza job you can find in http://samza.apache.org/learn/documen
 
 Stefan Repcek
 repcek2@gmail.com
+
 https://www.linkedin.com/in/stefanrepcek
 
 
