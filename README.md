@@ -41,3 +41,11 @@ bin/run-job.sh --config-factory=org.apache.samza.config.factories.PropertiesConf
 ```
 
 how to configure samza job you can find in http://samza.apache.org/learn/documentation/0.7.0/jobs/configuration-table.html
+
+# Author #
+
+Stefan Repcek
+repcek2@gmail.com
+https://www.linkedin.com/in/stefanrepcek
+
+
