@@ -1,6 +1,6 @@
 # Samza-Esper engine #
 
-is engine for distributed complex event processing (CEP) which allows to built architecture for real-time analysis leveraging CEP and stream processing (SP) concepts.This engine is simple integration of Apache Samza and Esper engine. This engine allows user to run Esper jobs which consists of multiple Esper instance that can process data in parallel. Jobs can be concated together to create distributed, scalable, dynamic and loosly coupled graph of computation. 
+Samza-Esper is engine for distributed complex event processing (CEP) which allows to built architecture for real-time analysis leveraging CEP and stream processing (SP) concepts.This engine is simple integration of Apache Samza and Esper engine. This engine allows user to run Esper jobs which consists of multiple Esper instance that can process data in parallel. Jobs can be concated together to create distributed, scalable, dynamic and loosly coupled graph of computation. 
 
 # Deployment #
 
