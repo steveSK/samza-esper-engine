@@ -120,7 +120,9 @@ public class EsperTask implements StreamTask, InitableTask {
     }
 
     private void executeStatementOperation(StatementOperation stmtOperation) throws StatementOperationIsNotValid {
-        isStatementOperationValid(stmtOperation);
+        if(!isStatementOperationValid(stmtOperation)){
+            throw new StatementOperationIsNotValid("Statement Operation is not valid");
+        }
         switch (stmtOperation.getStatementOperationType()) {
             case CREATE:
                 esperService.createEPLWithListener(stmtOperation.getStatementName(), stmtOperation.getStatementDefinition(),
@@ -139,28 +141,10 @@ public class EsperTask implements StreamTask, InitableTask {
         }
     }
 
-    private void isStatementOperationValid(StatementOperation stmtOperation) throws StatementOperationIsNotValid {
-        switch (stmtOperation.getStatementOperationType()) {
-            case CREATE:
-                if (stmtOperation.getStatementName() == null || stmtOperation.getStatementDefinition() == null) {
-                    throw new StatementOperationIsNotValid("statement operation is not valid");
-                }
-                break;
-            case DESTROY:
-                if (stmtOperation.getStatementName() == null || stmtOperation.getStatementDefinition() != null) {
-                    throw new StatementOperationIsNotValid("statement operation is not valid");
-                }
-                break;
-            case DESTROYALL:
-                if (stmtOperation.getStatementName() != null || stmtOperation.getStatementDefinition() != null) {
-                    throw new StatementOperationIsNotValid("statement operation is not valid");
-                }
-                break;
-            case GETSTATEMENTS:
-                if (stmtOperation.getStatementName() != null || stmtOperation.getStatementDefinition() != null) {
-                    throw new StatementOperationIsNotValid("statement operation is not valid");
-                }
-                break;
-        }
+    private boolean isStatementOperationValid(StatementOperation stmtOperation) throws StatementOperationIsNotValid {
+        return stmtOperation!=null
+                && stmtOperation.getStatementDefinition()!= null
+                && stmtOperation.getStatementOperationType()!=null
+                && stmtOperation.getStatementName()!= null;
     }
 }
