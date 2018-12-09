@@ -20,14 +20,6 @@
       <id>my-local-repo</id>
       <url>file://${user.home}/.m2/repository</url>
     </repository>
-      <repository>
-        <id>opencast-public</id>
-        <url>http://repository.opencastproject.org/nexus/content/repositories/public/</url>
-    </repository> 
-    <repository>
-      <id>apache-releases</id>
-      <url>https://repository.apache.org/content/groups/public</url>
-    </repository>
      <repository>
       <id>scala-tools.org</id>
       <name>Scala-tools Maven2 Repository</name>
